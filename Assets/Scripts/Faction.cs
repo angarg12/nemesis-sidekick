@@ -1,18 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Faction {
+public class Faction: MonoBehaviour {
 
-	public enum Color {
-		Blue,
-		Red,
-		Purple
-	}
+	public FactionController.Color color;
 
-	public bool Damages(Color source, Color target){
-		if( source != target){
-			return true;
-		}
-		return false;
+	public FactionController.Color getColor(){
+		return color;
 	}
 }
