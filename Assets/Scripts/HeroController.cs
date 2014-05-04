@@ -9,7 +9,7 @@ public class Boundary {
 	public float yMax;
 }
 
-public class HeroController : MonoBehaviour {
+public class HeroController : MonoBehaviour, IFactioned {
 	public float speed;
 	public Boundary boundary;
 	
@@ -18,6 +18,7 @@ public class HeroController : MonoBehaviour {
 	public float fireRate;
 	
 	private float nextFire;
+	private Faction.Color color = Faction.Color.Blue;
 	
 	void Update (){
 		if (Input.GetButton("Fire1") && Time.time > nextFire) 
@@ -40,5 +41,9 @@ public class HeroController : MonoBehaviour {
 			Mathf.Clamp (transform.position.y, boundary.yMin, boundary.yMax),
 			0.0f
 			);
+	}
+
+	public Faction.Color getColor(){
+		return color;
 	}
 }
