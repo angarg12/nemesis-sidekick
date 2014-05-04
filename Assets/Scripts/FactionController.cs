@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FactionController {
+public static class FactionController {
 
 	public enum Color {
 		Blue,
@@ -9,7 +9,7 @@ public class FactionController {
 		Purple
 	}
 
-	public bool Damages(Color source, Color target){
+	public static bool Damages(Color source, Color target){
 		if( source != target){
 			return true;
 		}
