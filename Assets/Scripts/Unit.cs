@@ -8,8 +8,8 @@ public class Unit : MonoBehaviour {
 		if(otherFaction != null){
 			if(FactionController.Damages(otherFaction.getColor(), myFaction.getColor())){
 				Destroy(gameObject);
-				Destroy(other.gameObject);
 			}
+			otherFaction.destroy(gameObject);
 		}
 	}
 }

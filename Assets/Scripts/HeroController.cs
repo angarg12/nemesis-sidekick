@@ -13,7 +13,7 @@ public class HeroController : MonoBehaviour {
 	public float speed;
 	public Boundary boundary;
 	
-	public GameObject shot;
+	public BulletFaction shotPrefab;
 	public Transform shotSpawn;
 	public float fireRate;
 	
@@ -23,7 +23,8 @@ public class HeroController : MonoBehaviour {
 		if (Input.GetButton("Fire1") && Time.time > nextFire) 
 		{
 			nextFire = Time.time + fireRate;
-			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+			BulletFaction shotInstance = (BulletFaction)Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
+			shotInstance.setParent(gameObject);
 			//audio.Play ();
 		}
 	}

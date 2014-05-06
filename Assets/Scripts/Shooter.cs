@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Shooter : MonoBehaviour {
-	public GameObject shot;
+	public BulletFaction shotPrefab;
 	public Transform shotSpawn;
 	public float fireRate;
 	public float delay;
@@ -12,7 +12,8 @@ public class Shooter : MonoBehaviour {
 	}
 	
 	void Fire () {
-		Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+		BulletFaction shotInstance = (BulletFaction)Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
+		shotInstance.setParent(gameObject);
 		//audio.Play();
 	}
 }

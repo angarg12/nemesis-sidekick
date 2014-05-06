@@ -100,7 +100,7 @@ MonoBehaviour:
     xMax: 7.5
     yMin: -4
     yMax: 3
-  shot: {fileID: 100000, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
+  shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 400000}
   fireRate: 1
 --- !u!212 &21200000
