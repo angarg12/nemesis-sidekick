@@ -368,6 +368,9 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
+  FireButton: 
+  HorizontalAxis: 
+  VerticalAxis: 
 --- !u!212 &780615673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -856,6 +859,9 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 448758092}
   fireRate: 1
+  FireButton: 
+  HorizontalAxis: 
+  VerticalAxis: 
 --- !u!212 &1456380675
 SpriteRenderer:
   m_ObjectHideFlags: 0
