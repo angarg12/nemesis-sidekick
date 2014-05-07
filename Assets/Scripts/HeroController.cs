@@ -1,14 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[System.Serializable]
-public class Boundary {
-	public float xMin; 
-	public float xMax; 
-	public float yMin;
-	public float yMax;
-}
-
 public class HeroController : MonoBehaviour {
 	public float speed;
 	public Boundary boundary;
@@ -23,8 +15,7 @@ public class HeroController : MonoBehaviour {
 		if (Input.GetButton("Fire1") && Time.time > nextFire) 
 		{
 			nextFire = Time.time + fireRate;
-			BulletFaction shotInstance = (BulletFaction)Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
-			shotInstance.setParent(gameObject);
+			Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
 			//audio.Play ();
 		}
 	}
