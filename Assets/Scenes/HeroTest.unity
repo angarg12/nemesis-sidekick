@@ -923,6 +923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  explosion: {fileID: 100000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
 --- !u!114 &1456380679
 MonoBehaviour:
   m_ObjectHideFlags: 0
