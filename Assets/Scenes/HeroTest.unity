@@ -350,13 +350,13 @@ Rigidbody2D:
 --- !u!114 &780615672
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400006, guid: 19beb04e2d22076459d6694d77773e40,
+  m_PrefabParentObject: {fileID: 11400004, guid: 19beb04e2d22076459d6694d77773e40,
     type: 2}
   m_PrefabInternal: {fileID: 1964677766}
   m_GameObject: {fileID: 780615667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59d7bc9f367df144b338f0682bca319, type: 3}
+  m_Script: {fileID: 11500000, guid: 153f642d50ad9af4cb11982cb4632941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
@@ -368,9 +368,9 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
-  FireButton: 
-  HorizontalAxis: 
-  VerticalAxis: 
+  FireButton: Fire2
+  HorizontalAxis: Horizontal2
+  VerticalAxis: Vertical2
 --- !u!212 &780615673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -810,11 +810,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1456380676}
   - 212: {fileID: 1456380675}
-  - 114: {fileID: 1456380674}
   - 50: {fileID: 1456380673}
   - 58: {fileID: 1456380677}
   - 114: {fileID: 1456380678}
   - 114: {fileID: 1456380679}
+  - 114: {fileID: 1456380674}
   m_Layer: 0
   m_Name: Hero
   m_TagString: hero
@@ -847,7 +847,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1456380672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a35888d2844e0418b3b43c1dc20ed7, type: 3}
+  m_Script: {fileID: 11500000, guid: 153f642d50ad9af4cb11982cb4632941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
@@ -859,9 +859,9 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 448758092}
   fireRate: 1
-  FireButton: 
-  HorizontalAxis: 
-  VerticalAxis: 
+  FireButton: Fire1
+  HorizontalAxis: Horizontal
+  VerticalAxis: Vertical
 --- !u!212 &1456380675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -924,6 +924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 0
   explosion: {fileID: 100000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
+  material: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
 --- !u!114 &1456380679
 MonoBehaviour:
   m_ObjectHideFlags: 0
