@@ -11,11 +11,11 @@ GameObject:
   - 212: {fileID: 21200000}
   - 50: {fileID: 5000000}
   - 58: {fileID: 5800000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400006}
   m_Layer: 0
-  m_Name: Sidekick
+  m_Name: sidekick
   m_TagString: sidekick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,18 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e248881f5ecd474587b7f03d3377607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dafa2e425f71e82468d613506fab4ad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,6 +119,20 @@ MonoBehaviour:
   FireButton: Fire2
   HorizontalAxis: Horizontal2
   VerticalAxis: Vertical2
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2029639a90c164fb5c0728d3523f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
+  myMaterial: {fileID: 2100000, guid: 99a843cccc90fe542b2a229c13624427, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

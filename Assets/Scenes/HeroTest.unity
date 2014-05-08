@@ -284,9 +284,9 @@ GameObject:
   - 212: {fileID: 780615673}
   - 50: {fileID: 780615671}
   - 58: {fileID: 780615670}
-  - 114: {fileID: 780615669}
   - 114: {fileID: 780615668}
   - 114: {fileID: 780615672}
+  - 114: {fileID: 780615669}
   m_Layer: 0
   m_Name: Sidekick
   m_TagString: sidekick
@@ -309,16 +309,18 @@ MonoBehaviour:
 --- !u!114 &780615669
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: 19beb04e2d22076459d6694d77773e40,
+  m_PrefabParentObject: {fileID: 11400006, guid: 19beb04e2d22076459d6694d77773e40,
     type: 2}
   m_PrefabInternal: {fileID: 1964677766}
   m_GameObject: {fileID: 780615667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dafa2e425f71e82468d613506fab4ad1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c2029639a90c164fb5c0728d3523f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: 1
+  explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
+  myMaterial: {fileID: 2100000, guid: 99a843cccc90fe542b2a229c13624427, type: 2}
 --- !u!58 &780615670
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -454,6 +456,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  explosion: {fileID: 19800000, guid: 0a0c9e5f1627c40449308f75762bd3a6, type: 2}
+  myMaterial: {fileID: 2100000, guid: 4697393cd58026645acc4e6badfec5c8, type: 2}
 --- !u!61 &887212149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -608,6 +612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 1
+  explosion: {fileID: 19800000, guid: 0a0c9e5f1627c40449308f75762bd3a6, type: 2}
+  myMaterial: {fileID: 2100000, guid: a8a5dd6aeb02c46448930d2df5c804aa, type: 2}
 --- !u!61 &1169925102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -812,9 +818,10 @@ GameObject:
   - 212: {fileID: 1456380675}
   - 50: {fileID: 1456380673}
   - 58: {fileID: 1456380677}
-  - 114: {fileID: 1456380678}
   - 114: {fileID: 1456380679}
   - 114: {fileID: 1456380674}
+  - 114: {fileID: 1456380678}
+  - 114: {fileID: 1456380680}
   m_Layer: 0
   m_Name: Hero
   m_TagString: hero
@@ -913,18 +920,18 @@ CircleCollider2D:
 --- !u!114 &1456380678
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: 50b810f5c8191744ea46312356b4d6e2,
+  m_PrefabParentObject: {fileID: 11400006, guid: 50b810f5c8191744ea46312356b4d6e2,
     type: 2}
   m_PrefabInternal: {fileID: 1385049922}
   m_GameObject: {fileID: 1456380672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6219d7e1443b449b5b78230d6ac7ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c2029639a90c164fb5c0728d3523f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
-  explosion: {fileID: 100000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
-  material: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
+  explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
+  myMaterial: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
 --- !u!114 &1456380679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,6 +942,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e248881f5ecd474587b7f03d3377607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1456380680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 50b810f5c8191744ea46312356b4d6e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1385049922}
+  m_GameObject: {fileID: 1456380672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6219d7e1443b449b5b78230d6ac7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1492021304
@@ -1109,9 +1128,9 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: shotPrefab
-      value: 
+    - target: {fileID: 100000, guid: 19beb04e2d22076459d6694d77773e40, type: 2}
+      propertyPath: m_Name
+      value: Sidekick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19beb04e2d22076459d6694d77773e40, type: 2}
