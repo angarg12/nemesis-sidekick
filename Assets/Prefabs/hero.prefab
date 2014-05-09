@@ -29,7 +29,6 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: hero
   m_TagString: hero
@@ -106,23 +105,11 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 400000}
   fireRate: 1
+  spawnPoint: {fileID: 0}
+  lives: 3
   FireButton: Fire1
   HorizontalAxis: Horizontal
   VerticalAxis: Vertical
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6219d7e1443b449b5b78230d6ac7ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 0
-  explosion: {fileID: 100000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
-  material: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,6 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  attackPower: 1
+  life: 1
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
   myMaterial: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
 --- !u!212 &21200000

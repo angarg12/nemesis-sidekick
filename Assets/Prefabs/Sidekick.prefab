@@ -116,6 +116,8 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 400002}
   fireRate: 1
+  spawnPoint: {fileID: 0}
+  lives: 3
   FireButton: Fire2
   HorizontalAxis: Horizontal2
   VerticalAxis: Vertical2
@@ -131,6 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 1
+  attackPower: 1
+  life: 1
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
   myMaterial: {fileID: 2100000, guid: 99a843cccc90fe542b2a229c13624427, type: 2}
 --- !u!212 &21200000

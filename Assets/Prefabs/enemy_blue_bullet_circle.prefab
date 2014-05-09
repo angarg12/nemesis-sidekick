@@ -81,6 +81,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  attackPower: 1
+  life: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 1
+  attackPower: 1
+  life: 1
   explosion: {fileID: 19800000, guid: 0a0c9e5f1627c40449308f75762bd3a6, type: 2}
   myMaterial: {fileID: 2100000, guid: a8a5dd6aeb02c46448930d2df5c804aa, type: 2}
 --- !u!114 &11400006

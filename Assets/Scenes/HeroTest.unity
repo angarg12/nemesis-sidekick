@@ -319,6 +319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 1
+  attackPower: 1
+  life: 1
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
   myMaterial: {fileID: 2100000, guid: 99a843cccc90fe542b2a229c13624427, type: 2}
 --- !u!58 &780615670
@@ -370,6 +372,8 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
+  spawnPoint: {fileID: 1737019508}
+  lives: 3
   FireButton: Fire2
   HorizontalAxis: Horizontal2
   VerticalAxis: Vertical2
@@ -456,6 +460,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  attackPower: 1
+  life: 1
   explosion: {fileID: 19800000, guid: 0a0c9e5f1627c40449308f75762bd3a6, type: 2}
   myMaterial: {fileID: 2100000, guid: 4697393cd58026645acc4e6badfec5c8, type: 2}
 --- !u!61 &887212149
@@ -546,7 +552,7 @@ Transform:
   m_PrefabInternal: {fileID: 1492021304}
   m_GameObject: {fileID: 887212146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: -2, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1671345337}
@@ -612,6 +618,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 1
+  attackPower: 1
+  life: 1
   explosion: {fileID: 19800000, guid: 0a0c9e5f1627c40449308f75762bd3a6, type: 2}
   myMaterial: {fileID: 2100000, guid: a8a5dd6aeb02c46448930d2df5c804aa, type: 2}
 --- !u!61 &1169925102
@@ -728,7 +736,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: 50b810f5c8191744ea46312356b4d6e2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 50b810f5c8191744ea46312356b4d6e2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -758,6 +766,10 @@ Prefab:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 50b810f5c8191744ea46312356b4d6e2, type: 2}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1775730788}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b810f5c8191744ea46312356b4d6e2, type: 2}
   m_RootGameObject: {fileID: 1456380672}
@@ -821,7 +833,6 @@ GameObject:
   - 114: {fileID: 1456380679}
   - 114: {fileID: 1456380674}
   - 114: {fileID: 1456380678}
-  - 114: {fileID: 1456380680}
   m_Layer: 0
   m_Name: Hero
   m_TagString: hero
@@ -866,6 +877,8 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 448758092}
   fireRate: 1
+  spawnPoint: {fileID: 1775730788}
+  lives: 3
   FireButton: Fire1
   HorizontalAxis: Horizontal
   VerticalAxis: Vertical
@@ -900,7 +913,7 @@ Transform:
   m_PrefabInternal: {fileID: 1385049922}
   m_GameObject: {fileID: 1456380672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: -2, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448758092}
@@ -930,6 +943,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  attackPower: 1
+  life: 1
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
   myMaterial: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
 --- !u!114 &1456380679
@@ -944,18 +959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e248881f5ecd474587b7f03d3377607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1456380680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: 50b810f5c8191744ea46312356b4d6e2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1385049922}
-  m_GameObject: {fileID: 1456380672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6219d7e1443b449b5b78230d6ac7ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1492021304
 Prefab:
   m_ObjectHideFlags: 0
@@ -965,7 +968,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: 733c4e6acf9c61c4abf2c59c1fe127e0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 733c4e6acf9c61c4abf2c59c1fe127e0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1052,6 +1055,58 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1169925107}
+--- !u!1 &1737019507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1737019508}
+  m_Layer: 0
+  m_Name: Sidekick Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1737019508
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737019507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!1 &1775730787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1775730788}
+  m_Layer: 0
+  m_Name: Hero Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1775730788
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775730787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1001 &1916300603
 Prefab:
   m_ObjectHideFlags: 0
@@ -1132,6 +1187,10 @@ Prefab:
       propertyPath: m_Name
       value: Sidekick
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 19beb04e2d22076459d6694d77773e40, type: 2}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1737019508}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19beb04e2d22076459d6694d77773e40, type: 2}
   m_RootGameObject: {fileID: 780615667}
