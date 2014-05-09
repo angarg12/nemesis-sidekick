@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 
 	public Transform spawnPoint;
 	public int lives = 3;
+	public int score = 0;
 
 	private float nextFire;
 	public string FireButton = "";
@@ -20,7 +21,8 @@ public class PlayerController : MonoBehaviour {
 	void Update(){
 		if (Input.GetButton(FireButton) && Time.time > nextFire){
 			nextFire = Time.time + fireRate;
-			Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
+			BulletFaction shotInstance = (BulletFaction)Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
+			shotInstance.setFather(gameObject);
 			//audio.Play ();
 		}
 	}
@@ -49,7 +51,6 @@ public class PlayerController : MonoBehaviour {
 			yield return new WaitForSeconds(2);
 			gameObject.transform.position = spawnPoint.position;
 			gameObject.GetComponent<SpriteRenderer>().enabled = true;
-			// TODO: apply invulnerability?
 		}else{
 			Destroy(gameObject);
 			// TODO: call the level controller to tell him a player has been eliminated
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public IEnumerator makeInvencible(float seconds){
-		gameObject.GetComponent<Collider2D>().enabled = false;
+		collider2D.enabled = false;
 		Color playerColor = renderer.material.color;
 			while(seconds > 0){
 			playerColor.a = 0.3f;
@@ -69,7 +70,10 @@ public class PlayerController : MonoBehaviour {
 			yield return new WaitForSeconds(0.1f);
 			seconds -= 0.1f;
 		}
-		gameObject.GetComponent<Collider2D>().enabled = true;
+		collider2D.enabled = true;
+	}
 
+	public void addScore(int addScore){
+		score += addScore;
 	}
 }

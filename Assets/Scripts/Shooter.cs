@@ -12,7 +12,8 @@ public class Shooter : MonoBehaviour {
 	}
 	
 	void Fire () {
-		Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
+		BulletFaction shotInstance = (BulletFaction)Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
+		shotInstance.setFather(gameObject);
 		//audio.Play();
 	}
 }

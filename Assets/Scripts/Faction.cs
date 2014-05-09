@@ -3,8 +3,9 @@ using System.Collections;
 
 public class Faction: MonoBehaviour {
 	public FactionController.Color color;
-	public int attackPower;
-	public int life;
+	public int attackPower = 1;
+	public int life = 1;
+	public int value = 0;
 
 	public FactionController.Color getColor(){
 		return color;
