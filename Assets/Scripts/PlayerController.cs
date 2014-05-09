@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour {
 
 	public IEnumerator death(){
 		lives--;
-		// TODO: call the level controller to tell him a player died
+		LevelController level = GameObject.Find("LevelController").GetComponent<LevelController>();
+		level.playerKilled(gameObject);
 		if(lives > 0){
 			// Turn off the renderer to make the object invisible
 			StartCoroutine(makeInvencible(4));
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour {
 			gameObject.GetComponent<SpriteRenderer>().enabled = true;
 		}else{
 			Destroy(gameObject);
-			// TODO: call the level controller to tell him a player has been eliminated
+			level.playerEliminated(gameObject);
 		}
 	}
 
