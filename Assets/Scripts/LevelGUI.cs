@@ -24,13 +24,27 @@ public class LevelGUI : MonoBehaviour {
 			GUIStyle winStyle = new GUIStyle(style);
 			winStyle.fontSize = 32;
 			winStyle.alignment = TextAnchor.MiddleCenter;
-			GUI.Label (new Rect ((Screen.width-100)/2,(Screen.height-50)/2,100,50), "You win!!", winStyle);
+			GUI.Label (new Rect((Screen.width-100)/2,(Screen.height-50)/2,100,50), "You win!!", winStyle);
+			
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+70)/2,100,50), "Repeat")){
+				Application.LoadLevel(Application.loadedLevel);
+			}
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+190)/2,100,50), "Quit")){
+				Application.Quit();
+			}
 		}
 		if(lose){
 			GUIStyle loseStyle = new GUIStyle(style);
 			loseStyle.fontSize = 32;
 			loseStyle.alignment = TextAnchor.MiddleCenter;
 			GUI.Label (new Rect ((Screen.width-100)/2,(Screen.height-50)/2,100,50), "You lose", loseStyle);
+
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+70)/2,100,50), "Rety")){
+				Application.LoadLevel(Application.loadedLevel);
+			}
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+190)/2,100,50), "Quit")){
+				Application.Quit();
+			}
 		}
 	}
 }

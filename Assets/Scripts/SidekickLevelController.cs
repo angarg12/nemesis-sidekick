@@ -30,9 +30,11 @@ public class SidekickLevelController : LevelController {
 
 	// Used to apply buff or anything in general.
 	public override void playerKilled(GameObject player){
-		if(player.tag == hero.tag){
+		if(hero != null && 
+		   player.tag == hero.tag){
 			DeathBuff.Instance.Apply(sidekick);
-		}else if(player.tag == sidekick.tag){
+		}else if(sidekick != null &&
+		         player.tag == sidekick.tag){
 			DeathBuff.Instance.Apply(hero);
 		}
 	}

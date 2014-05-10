@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hero_bullet
   m_TagString: hero
   m_Icon: {fileID: 0}
@@ -83,6 +83,7 @@ MonoBehaviour:
   color: 0
   attackPower: 1
   life: 1
+  value: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
