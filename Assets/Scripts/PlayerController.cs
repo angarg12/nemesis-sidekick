@@ -17,9 +17,13 @@ public class PlayerController : MonoBehaviour {
 	public string FireButton = "";
 	public string HorizontalAxis = "";
 	public string VerticalAxis = "";
+
+	private bool isDead = false;
 	
 	void Update(){
-		if (Input.GetButton(FireButton) && Time.time > nextFire){
+		if(isDead == false &&
+		  Input.GetButton(FireButton) && 
+		  Time.time > nextFire){
 			nextFire = Time.time + fireRate;
 			BulletFaction shotInstance = (BulletFaction)Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
 			shotInstance.setFather(gameObject);
@@ -28,20 +32,23 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void FixedUpdate(){
-		float moveHorizontal = Input.GetAxis (HorizontalAxis);
-		float moveVertical = Input.GetAxis (VerticalAxis);
-		
-		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-		rigidbody2D.velocity = movement * speed;
-		
-		transform.position = new Vector3(
-			Mathf.Clamp (transform.position.x, boundary.xMin, boundary.xMax), 
-			Mathf.Clamp (transform.position.y, boundary.yMin, boundary.yMax),
-			0.0f
-			);
+		if(isDead == false){
+			float moveHorizontal = Input.GetAxis (HorizontalAxis);
+			float moveVertical = Input.GetAxis (VerticalAxis);
+			
+			Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+			rigidbody2D.velocity = movement * speed;
+			
+			transform.position = new Vector3(
+				Mathf.Clamp (transform.position.x, boundary.xMin, boundary.xMax), 
+				Mathf.Clamp (transform.position.y, boundary.yMin, boundary.yMax),
+				0.0f
+				);
+		}
 	}
 
 	public IEnumerator death(){
+		isDead = true;
 		lives--;
 		LevelController level = GameObject.FindWithTag("GameController").GetComponent<LevelController>();
 		level.playerKilled(gameObject);
@@ -56,6 +63,7 @@ public class PlayerController : MonoBehaviour {
 			yield return new WaitForSeconds(respawnTime);
 			gameObject.transform.position = spawnPoint.position;
 			gameObject.GetComponent<SpriteRenderer>().enabled = true;
+			isDead = false;
 		}else{
 			Destroy(gameObject);
 			level.playerEliminated(gameObject);
