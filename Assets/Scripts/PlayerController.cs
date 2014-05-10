@@ -43,13 +43,17 @@ public class PlayerController : MonoBehaviour {
 
 	public IEnumerator death(){
 		lives--;
-		LevelController level = GameObject.Find("LevelController").GetComponent<LevelController>();
+		LevelController level = GameObject.FindWithTag("GameController").GetComponent<LevelController>();
 		level.playerKilled(gameObject);
+
+		int respawnTime = 2;
+		int invincibilityTime = 1;
+
 		if(lives > 0){
 			// Turn off the renderer to make the object invisible
-			StartCoroutine(makeInvencible(4));
+			StartCoroutine(makeInvencible(respawnTime+invincibilityTime));
 			gameObject.GetComponent<SpriteRenderer>().enabled = false;
-			yield return new WaitForSeconds(2);
+			yield return new WaitForSeconds(respawnTime);
 			gameObject.transform.position = spawnPoint.position;
 			gameObject.GetComponent<SpriteRenderer>().enabled = true;
 		}else{
@@ -60,16 +64,21 @@ public class PlayerController : MonoBehaviour {
 
 	public IEnumerator makeInvencible(float seconds){
 		collider2D.enabled = false;
+
+		float transparent = 0.3f;
+		float opaque = 1f;
+		float blinkRate = 0.1f;
+
 		Color playerColor = renderer.material.color;
 			while(seconds > 0){
-			playerColor.a = 0.3f;
+			playerColor.a = transparent;
 			renderer.material.color = playerColor;
-			yield return new WaitForSeconds(0.1f);
-			seconds -= 0.1f;
-			playerColor.a = 1f;
+			yield return new WaitForSeconds(blinkRate);
+			seconds -= blinkRate;
+			playerColor.a = opaque;
 			renderer.material.color = playerColor;
-			yield return new WaitForSeconds(0.1f);
-			seconds -= 0.1f;
+			yield return new WaitForSeconds(blinkRate);
+			seconds -= blinkRate;
 		}
 		collider2D.enabled = true;
 	}

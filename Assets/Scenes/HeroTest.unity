@@ -217,7 +217,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 402857729}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35c015ce0e92c0641b3bb94395b24c5e, type: 3}
   m_Name: 
@@ -446,6 +446,8 @@ MonoBehaviour:
     m_StretchHeight: 0
   hero: {fileID: 1456380674}
   sidekick: {fileID: 780615672}
+  win: 0
+  lose: 0
 --- !u!4 &754382609
 Transform:
   m_ObjectHideFlags: 0
@@ -1105,6 +1107,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e248881f5ecd474587b7f03d3377607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1614150705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1614150707}
+  - 114: {fileID: 1614150706}
+  m_Layer: 0
+  m_Name: LevelController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1614150706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1614150705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d9ac82c07c42f499f08791fccfa7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCombinedScore: 500
+  hero: {fileID: 1456380674}
+  sidekick: {fileID: 780615672}
+--- !u!4 &1614150707
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1614150705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1618492784
 GameObject:
   m_ObjectHideFlags: 0
