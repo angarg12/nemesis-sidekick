@@ -11,6 +11,7 @@ public class SidekickLevelController : LevelController {
 
 	void Start(){
 		state = GameState.Started;
+		Time.timeScale = 1;
 	}
 
 	// Los objetivos varian segun el modo de juego. Para simplificar vamos a hacer lo siguiente.
@@ -24,6 +25,12 @@ public class SidekickLevelController : LevelController {
 					gui.win = true;
 				}
 				state = GameState.Win;
+			}
+			if(Input.GetKeyDown(KeyCode.Escape)) {
+				LevelGUI gui = GameObject.Find("GUI").GetComponent<LevelGUI>();
+				if(gui != null){
+					gui.paused = !gui.paused;
+				}
 			}
 		}
 	}
@@ -47,5 +54,13 @@ public class SidekickLevelController : LevelController {
 			}
 			state = GameState.Lose;
 		}
+	}
+
+	public override void pauseGame(){
+		Time.timeScale = 0;
+	}
+
+	public override void unpauseGame(){
+		Time.timeScale = 1;
 	}
 }

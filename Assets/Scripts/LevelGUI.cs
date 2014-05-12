@@ -9,6 +9,7 @@ public class LevelGUI : MonoBehaviour {
 
 	public bool win = false;
 	public bool lose = false;
+	public bool paused = false;
 
 	void OnGUI () {
 		GUI.Label (new Rect (20,10,100,50), "Hero", style);
@@ -39,12 +40,30 @@ public class LevelGUI : MonoBehaviour {
 			loseStyle.alignment = TextAnchor.MiddleCenter;
 			GUI.Label (new Rect ((Screen.width-100)/2,(Screen.height-50)/2,100,50), "You lose", loseStyle);
 
-			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+70)/2,100,50), "Rety")){
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+70)/2,100,50), "Retry")){
 				Application.LoadLevel(Application.loadedLevel);
 			}
 			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+190)/2,100,50), "Quit")){
 				Application.Quit();
 			}
+		}
+		if(paused){		
+			LevelController level = GameObject.FindWithTag("GameController").GetComponent<LevelController>();
+			level.pauseGame();
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height-50)/2,100,50), "Resume")){
+				paused = false;
+			}		
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+70)/2,100,50), "Restart")){
+				Application.LoadLevel(Application.loadedLevel);
+				paused = false;
+			}
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+190)/2,100,50), "Main menu")){
+				//Application.LoadLevel();
+				paused = false;
+			}
+		}else{
+			LevelController level = GameObject.FindWithTag("GameController").GetComponent<LevelController>();
+			level.unpauseGame();
 		}
 	}
 }

@@ -19,18 +19,7 @@ public class PlayerController : MonoBehaviour {
 	public string VerticalAxis = "";
 
 	private bool isDead = false;
-	
-	void Update(){
-		if(isDead == false &&
-		  Input.GetButton(FireButton) && 
-		  Time.time > nextFire){
-			nextFire = Time.time + fireRate;
-			BulletFaction shotInstance = (BulletFaction)Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
-			shotInstance.setFather(gameObject);
-			//audio.Play ();
-		}
-	}
-	
+		
 	void FixedUpdate(){
 		if(isDead == false){
 			float moveHorizontal = Input.GetAxis (HorizontalAxis);
@@ -44,6 +33,15 @@ public class PlayerController : MonoBehaviour {
 				Mathf.Clamp (transform.position.y, boundary.yMin, boundary.yMax),
 				0.0f
 				);
+		}
+		
+		if(isDead == false &&
+		   Input.GetButton(FireButton) && 
+		   Time.time > nextFire){
+			nextFire = Time.time + fireRate;
+			BulletFaction shotInstance = (BulletFaction)Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
+			shotInstance.setFather(gameObject);
+			//audio.Play ();
 		}
 	}
 
