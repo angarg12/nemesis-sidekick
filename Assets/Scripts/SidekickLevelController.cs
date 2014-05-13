@@ -25,6 +25,7 @@ public class SidekickLevelController : LevelController {
 					gui.win = true;
 				}
 				state = GameState.Win;
+				disableLevel();
 			}
 			if(Input.GetKeyDown(KeyCode.Escape)) {
 				LevelGUI gui = GameObject.Find("GUI").GetComponent<LevelGUI>();
@@ -53,14 +54,7 @@ public class SidekickLevelController : LevelController {
 				gui.lose = true;
 			}
 			state = GameState.Lose;
+			disableLevel();
 		}
-	}
-
-	public override void pauseGame(){
-		Time.timeScale = 0;
-	}
-
-	public override void unpauseGame(){
-		Time.timeScale = 1;
 	}
 }
