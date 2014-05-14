@@ -14,15 +14,10 @@ public abstract class LevelController: MonoBehaviour {
 	}
 
 	public void disableLevel(){
-		// FIXME: This also disables the boundaries, so that the last items aren't destroyed.
-		Collider2D[] colliders = (Collider2D[])Object.FindObjectsOfType(typeof(Collider2D));
-		foreach(Collider2D collider in colliders){
-			collider.enabled = false;
-		}
-
-		// FIXME: A little bug may occur when the game is won or lost when a players is in movement. He just goes out of boundaries.
 		PlayerController[] players = (PlayerController[])Object.FindObjectsOfType(typeof(PlayerController));
 		foreach(PlayerController player in players){
+			player.rigidbody2D.velocity = new Vector2(0,0);
+			player.collider2D.enabled = false;
 			player.enabled = false;
 		}
 
