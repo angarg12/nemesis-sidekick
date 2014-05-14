@@ -448,6 +448,8 @@ MonoBehaviour:
   sidekick: {fileID: 780615672}
   win: 0
   lose: 0
+  paused: 0
+  winMessageLabel: You
 --- !u!4 &754382609
 Transform:
   m_ObjectHideFlags: 0
@@ -559,7 +561,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
-  spawnPoint: {fileID: 1737019508}
+  spawnPoint: {fileID: 0}
   lives: 3
   score: 0
   FireButton: Fire2
@@ -956,10 +958,6 @@ Prefab:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 50b810f5c8191744ea46312356b4d6e2, type: 2}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 1775730788}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b810f5c8191744ea46312356b4d6e2, type: 2}
   m_RootGameObject: {fileID: 1456380672}
@@ -1023,7 +1021,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 448758092}
   fireRate: 1
-  spawnPoint: {fileID: 1775730788}
+  spawnPoint: {fileID: 0}
   lives: 3
   score: 0
   FireButton: Fire1
@@ -1131,10 +1129,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1614150705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d9ac82c07c42f499f08791fccfa7cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e2611c638241ae4d99e639158503269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCombinedScore: 500
+  targetIndividualScore: 500
   hero: {fileID: 1456380674}
   sidekick: {fileID: 780615672}
 --- !u!4 &1614150707
@@ -1382,10 +1380,6 @@ Prefab:
       propertyPath: m_Name
       value: Sidekick
       objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: 19beb04e2d22076459d6694d77773e40, type: 2}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 1737019508}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19beb04e2d22076459d6694d77773e40, type: 2}
   m_RootGameObject: {fileID: 780615667}

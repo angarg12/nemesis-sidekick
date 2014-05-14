@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SidekickLevelController : LevelController {
-	public int targetCombinedScore;
+public class NemesisLevelController : LevelController {
+	public int targetIndividualScore;
 
 	public PlayerController hero;
 	public PlayerController sidekick;
 
 	private GameState state;
+	private int playersRemaining = 2;
 
 	void Start(){
 		state = GameState.Started;
@@ -19,14 +20,16 @@ public class SidekickLevelController : LevelController {
 	// En modo nemesis, debe sobrevivir solo uno de ellos, y tener una puntuacion individual de Y.
 	void Update () {
 		if(state == GameState.Started){
-			if(hero.score + sidekick.score >= targetCombinedScore){
-				LevelGUI gui = GameObject.Find("GUI").GetComponent<LevelGUI>();
-				if(gui != null){
-					gui.winMessageLabel = "You win!!";
-					gui.win = true;
-				}
-				state = GameState.Win;
-				disableLevel();
+			Debug.Log(hero+" "+sidekick);
+			if(hero != null && 
+			   hero.score >= targetIndividualScore && 
+			   playersRemaining == 1){
+				showWinWindow("Hero");
+			}
+			if(sidekick != null && 
+			   sidekick.score >= targetIndividualScore && 
+			   playersRemaining == 1){
+				showWinWindow("Sidekick");
 			}
 			if(Input.GetKeyDown(KeyCode.Escape)) {
 				LevelGUI gui = GameObject.Find("GUI").GetComponent<LevelGUI>();
@@ -37,25 +40,39 @@ public class SidekickLevelController : LevelController {
 		}
 	}
 
+	void showWinWindow(string winner){
+		Debug.Log(winner);
+		LevelGUI gui = GameObject.Find("GUI").GetComponent<LevelGUI>();
+		if(gui != null){
+			gui.winMessageLabel = winner+" wins!!";
+			gui.win = true;
+		}
+		state = GameState.Win;
+		disableLevel();
+	}
+
 	// Used to apply buff or anything in general.
 	public override void playerKilled(GameObject player){
 		if(hero != null && 
 		   player.tag == hero.tag){
-			DeathBuff.Instance.Apply(sidekick);
+			DeathBuff.Instance.Apply(hero);
 		}else if(sidekick != null &&
 		         player.tag == sidekick.tag){
-			DeathBuff.Instance.Apply(hero);
+			DeathBuff.Instance.Apply(sidekick);
 		}
 	}
 
 	public override void playerEliminated(GameObject player){
 		if(state == GameState.Started){
-			LevelGUI gui = GameObject.Find("GUI").GetComponent<LevelGUI>();
-			if(gui != null){
-				gui.lose = true;
+			playersRemaining--;
+			if(playersRemaining <= 0){
+				LevelGUI gui = GameObject.Find("GUI").GetComponent<LevelGUI>();
+				if(gui != null){
+					gui.lose = true;
+				}
+				state = GameState.Lose;
+				disableLevel();
 			}
-			state = GameState.Lose;
-			disableLevel();
 		}
 	}
 }

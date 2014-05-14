@@ -16,7 +16,7 @@ public abstract class LevelController: MonoBehaviour {
 	public void disableLevel(){
 		PlayerController[] players = (PlayerController[])Object.FindObjectsOfType(typeof(PlayerController));
 		foreach(PlayerController player in players){
-			player.rigidbody2D.velocity = new Vector2(0,0);
+			player.rigidbody2D.velocity = Vector2.zero;
 			player.collider2D.enabled = false;
 			player.enabled = false;
 		}

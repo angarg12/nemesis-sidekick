@@ -11,6 +11,8 @@ public class LevelGUI : MonoBehaviour {
 	public bool lose = false;
 	public bool paused = false;
 
+	public string winMessageLabel = "You win!!";
+
 	void OnGUI () {
 		GUI.Label (new Rect (20,10,100,50), "Hero", style);
 		GUI.Label (new Rect (20,30,100,50), "Lives: "+hero.lives, style);
@@ -25,7 +27,7 @@ public class LevelGUI : MonoBehaviour {
 			GUIStyle winStyle = new GUIStyle(style);
 			winStyle.fontSize = 32;
 			winStyle.alignment = TextAnchor.MiddleCenter;
-			GUI.Label (new Rect((Screen.width-100)/2,(Screen.height-50)/2,100,50), "You win!!", winStyle);
+			GUI.Label (new Rect((Screen.width-100)/2,(Screen.height-50)/2,100,50), winMessageLabel, winStyle);
 			
 			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+70)/2,100,50), "Repeat")){
 				Application.LoadLevel(Application.loadedLevel);
