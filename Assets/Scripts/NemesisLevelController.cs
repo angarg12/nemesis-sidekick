@@ -9,8 +9,9 @@ public class NemesisLevelController : LevelController {
 
 	private GameState state;
 	private int playersRemaining = 2;
-
+	
 	void Start(){
+		mode = GameMode.Nemesis;
 		state = GameState.Started;
 		Time.timeScale = 1;
 	}
@@ -20,7 +21,6 @@ public class NemesisLevelController : LevelController {
 	// En modo nemesis, debe sobrevivir solo uno de ellos, y tener una puntuacion individual de Y.
 	void Update () {
 		if(state == GameState.Started){
-			Debug.Log(hero+" "+sidekick);
 			if(hero != null && 
 			   hero.score >= targetIndividualScore && 
 			   playersRemaining == 1){
@@ -41,7 +41,6 @@ public class NemesisLevelController : LevelController {
 	}
 
 	void showWinWindow(string winner){
-		Debug.Log(winner);
 		LevelGUI gui = GameObject.Find("GUI").GetComponent<LevelGUI>();
 		if(gui != null){
 			gui.winMessageLabel = winner+" wins!!";

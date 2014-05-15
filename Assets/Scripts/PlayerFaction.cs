@@ -6,7 +6,12 @@ public class PlayerFaction : Faction {
 	public Material myMaterial;
 	
 	public override void damage(GameObject orderer){
+		LevelController levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
 		if(orderer.tag == "enemy"){
+			base.damage(orderer);
+		// If we are in sidekick mode, enable friendly fire
+		}else if(levelController.mode == GameMode.Sidekick &&
+		         orderer.tag != gameObject.tag){
 			base.damage(orderer);
 		}
 	}

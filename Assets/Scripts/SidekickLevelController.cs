@@ -10,6 +10,7 @@ public class SidekickLevelController : LevelController {
 	private GameState state;
 
 	void Start(){
+		mode = GameMode.Sidekick;
 		state = GameState.Started;
 		Time.timeScale = 1;
 	}

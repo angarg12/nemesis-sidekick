@@ -2,6 +2,8 @@
 using System.Collections;
 
 public abstract class LevelController: MonoBehaviour {
+	public GameMode mode {get; protected set;}
+
 	public abstract void playerKilled(GameObject player);
 	public abstract void playerEliminated(GameObject player);
 
