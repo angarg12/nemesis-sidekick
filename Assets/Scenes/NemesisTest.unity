@@ -225,6 +225,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 100000, guid: e8f532f66dc1b9741b12b29881935270, type: 2}
   - {fileID: 100002, guid: 733c4e6acf9c61c4abf2c59c1fe127e0, type: 2}
+  - {fileID: 100002, guid: d8694ca58632a3c48b25c2ab980ad323, type: 2}
   spawnRate: 1
   delay: 1
 --- !u!4 &402857731
@@ -561,7 +562,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 1737019508}
   lives: 3
   score: 0
   FireButton: Fire2
@@ -958,6 +959,10 @@ Prefab:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 50b810f5c8191744ea46312356b4d6e2, type: 2}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1775730788}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b810f5c8191744ea46312356b4d6e2, type: 2}
   m_RootGameObject: {fileID: 1456380672}
@@ -1021,7 +1026,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 448758092}
   fireRate: 1
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 1775730788}
   lives: 3
   score: 0
   FireButton: Fire1
@@ -1380,6 +1385,10 @@ Prefab:
       propertyPath: m_Name
       value: Sidekick
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 19beb04e2d22076459d6694d77773e40, type: 2}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1737019508}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19beb04e2d22076459d6694d77773e40, type: 2}
   m_RootGameObject: {fileID: 780615667}
