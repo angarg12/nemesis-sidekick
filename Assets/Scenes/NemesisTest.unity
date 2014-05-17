@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2611c638241ae4d99e639158503269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetIndividualScore: 500
+  targetIndividualScore: 2000
   hero: {fileID: 1456380674}
   sidekick: {fileID: 780615672}
 --- !u!4 &1614150707
