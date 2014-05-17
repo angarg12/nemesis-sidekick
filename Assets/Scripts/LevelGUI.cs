@@ -60,7 +60,7 @@ public class LevelGUI : MonoBehaviour {
 				paused = false;
 			}
 			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+190)/2,100,50), "Main menu")){
-				//Application.LoadLevel();
+				Application.LoadLevel("MainMenu");
 				paused = false;
 			}
 		}else{
