@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 	public BulletFaction shotPrefab;
 	public Transform shotSpawn;
 	public float fireRate;
+	public AudioClip fireAudio;
+	public AudioClip deathAudio;
 
 	public Transform spawnPoint;
 	public int lives = 3;
@@ -41,11 +43,15 @@ public class PlayerController : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 			BulletFaction shotInstance = (BulletFaction)Instantiate(shotPrefab, shotSpawn.position, shotSpawn.rotation);
 			shotInstance.setFather(gameObject);
-			//audio.Play ();
+			AudioSource audio = GameObject.FindWithTag("GameController").GetComponent<AudioSource>();
+			audio.PlayOneShot(fireAudio, 0.6F);
 		}
 	}
 
 	public IEnumerator death(){
+		AudioSource audio = GameObject.FindWithTag("GameController").GetComponent<AudioSource>();
+		audio.PlayOneShot(deathAudio, 1F);
+
 		isDead = true;
 		lives--;
 		LevelController level = GameObject.FindWithTag("GameController").GetComponent<LevelController>();

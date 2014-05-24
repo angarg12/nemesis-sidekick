@@ -3,6 +3,7 @@ using System.Collections;
 
 public class EnemyFaction : Faction {
 	public ParticleSystem explosion;
+	public AudioClip explosionAudio;
 	public Material myMaterial;
 
 	public override void damage(GameObject orderer){
@@ -20,7 +21,6 @@ public class EnemyFaction : Faction {
 			orderer.GetComponent<BulletFaction>().addScore(value);
 		}
 
-		Destroy(gameObject);
 		ParticleSystem explosionInstance = (ParticleSystem)Instantiate(
 			explosion, 
 			transform.position, 
@@ -28,5 +28,8 @@ public class EnemyFaction : Faction {
 		// Need to customize the explosion material for each faction
 		explosionInstance.renderer.material = myMaterial;
 		explosionInstance.Play();
+		AudioSource audio = GameObject.FindWithTag("GameController").GetComponent<AudioSource>();
+		audio.PlayOneShot(explosionAudio, 1F);
+		Destroy(gameObject);
 	}
 }

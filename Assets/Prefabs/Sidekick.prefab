@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
   m_Layer: 0
-  m_Name: Sidekick
+  m_Name: sidekick
   m_TagString: sidekick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,6 +116,8 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 400002}
   fireRate: 1
+  fireAudio: {fileID: 8300000, guid: 85a71a2be2bf9f84dae23cd4f9aa9658, type: 3}
+  deathAudio: {fileID: 8300000, guid: b2dbcbf93eb1edc4aa9579833df4f484, type: 3}
   spawnPoint: {fileID: 0}
   lives: 3
   score: 0
