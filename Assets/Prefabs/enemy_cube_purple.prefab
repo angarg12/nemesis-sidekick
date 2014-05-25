@@ -113,7 +113,7 @@ MonoBehaviour:
   life: 1
   value: 100
   explosion: {fileID: 19800000, guid: 0a0c9e5f1627c40449308f75762bd3a6, type: 2}
-  explosionAudio: {fileID: 8300000, guid: 9339dcde69dda7b4c9728d0e4fee478e, type: 3}
+  explosionAudio: {fileID: 8300000, guid: 7eb5d192e8cff41499f82af788857e6c, type: 3}
   myMaterial: {fileID: 2100000, guid: 77985894ae9e90a4a9386b74bf3fefd8, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
@@ -130,7 +130,7 @@ MonoBehaviour:
   shotSpawn: {fileID: 400000}
   fireRate: 1
   delay: 1
-  fireAudio: {fileID: 8300000, guid: 581cfcf717b8c2e48b247653b09e9f0b, type: 3}
+  fireAudio: {fileID: 8300000, guid: b7214ccbeee0526458089292239f9a11, type: 3}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

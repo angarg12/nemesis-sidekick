@@ -518,8 +518,8 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
-  fireAudio: {fileID: 8300000, guid: 85a71a2be2bf9f84dae23cd4f9aa9658, type: 3}
-  deathAudio: {fileID: 8300000, guid: b2dbcbf93eb1edc4aa9579833df4f484, type: 3}
+  fireAudio: {fileID: 8300000, guid: e16d4f5883547eb44980263451809336, type: 3}
+  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   spawnPoint: {fileID: 1737019508}
   lives: 3
   score: 0
@@ -694,8 +694,8 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 448758092}
   fireRate: 1
-  fireAudio: {fileID: 8300000, guid: 85a71a2be2bf9f84dae23cd4f9aa9658, type: 3}
-  deathAudio: {fileID: 8300000, guid: b2dbcbf93eb1edc4aa9579833df4f484, type: 3}
+  fireAudio: {fileID: 8300000, guid: e16d4f5883547eb44980263451809336, type: 3}
+  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   spawnPoint: {fileID: 1775730788}
   lives: 3
   score: 0
@@ -830,11 +830,11 @@ AudioSource:
   m_GameObject: {fileID: 1614150705}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 927bfc014c7f573469ab81e85d00ae20, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4794dd44ca60d5645b6f27a415500fb9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .200000003
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
