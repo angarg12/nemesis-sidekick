@@ -6,6 +6,8 @@ public class BulletFaction : Faction {
 
 	public void setFather(GameObject theFather){
 		father = theFather;
+		Faction fatherFaction = father.GetComponent<Faction> ();
+		colorize(fatherFaction.color);
 	}
 
 	public override void damage(GameObject orderer){

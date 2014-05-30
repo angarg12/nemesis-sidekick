@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerFaction : Faction {
-	public ParticleSystem explosion;
-	public Material myMaterial;
-	
+public class PlayerFaction : UnitFaction {	
 	public override void damage(GameObject orderer){
 		LevelController levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
 		if(orderer.tag == "enemy"){

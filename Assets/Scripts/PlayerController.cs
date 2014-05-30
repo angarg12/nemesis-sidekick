@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour {
 		float blinkRate = 0.1f;
 
 		Color playerColor = renderer.material.color;
-			while(seconds > 0){
+		while(seconds > 0){
 			playerColor.a = transparent;
 			renderer.material.color = playerColor;
 			yield return new WaitForSeconds(blinkRate);

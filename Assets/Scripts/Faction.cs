@@ -2,12 +2,25 @@
 using System.Collections;
 
 public class Faction: MonoBehaviour {
-	public FactionController.Color color;
+	public FactionController.FactionColor color = FactionController.FactionColor.Unknown;
 	public int attackPower = 1;
 	public int life = 1;
 	public int value = 0;
 
-	public FactionController.Color getColor(){
+	public virtual void Awake(){
+		if (color != FactionController.FactionColor.Unknown) {
+			colorize(color);
+		}
+	}
+
+	public virtual void colorize(FactionController.FactionColor color_){
+		color = color_;
+		Color colorChange = FactionController.toRGB[color];
+		renderer.material.color = colorChange;
+	}
+
+	public FactionController.FactionColor getColor(){
+		DebugUtils.Assert(color != FactionController.FactionColor.Unknown, "Factions must have a color assigned.");
 		return color;
 	}
 

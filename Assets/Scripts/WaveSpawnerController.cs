@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class WaveSpawnerController : MonoBehaviour {
@@ -9,11 +10,15 @@ public class WaveSpawnerController : MonoBehaviour {
 	void Start () {
 		InvokeRepeating ("SpawnEnemy", delay, spawnRate);
 	}
-	
-	// Update is called once per frame
+
 	void SpawnEnemy () {
+		// Spawn enemies at a random location in the horizontal axis
 		Vector3 position = gameObject.transform.position;
-		position.x = Random.Range(-7.5f,7.5f);
-		Instantiate(enemies[(Random.Range(0, enemies.Length))], position, gameObject.transform.rotation);
+		position.x = UnityEngine.Random.Range(-7.5f,7.5f);
+		int enemyType = UnityEngine.Random.Range (0, enemies.Length);
+		EnemyFaction enemy = ((GameObject)Instantiate(enemies[enemyType], position, gameObject.transform.rotation)).GetComponent<EnemyFaction>();
+		// A very convoluted way to pick up a valid random color from the enum
+		FactionController.FactionColor enemyColor = (FactionController.FactionColor)(UnityEngine.Random.Range (1, Enum.GetNames (typeof(FactionController.FactionColor)).Length));
+		enemy.colorize (enemyColor);
 	}
 }

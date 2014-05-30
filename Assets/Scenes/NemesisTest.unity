@@ -223,9 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 100000, guid: e8f532f66dc1b9741b12b29881935270, type: 2}
-  - {fileID: 100002, guid: 733c4e6acf9c61c4abf2c59c1fe127e0, type: 2}
-  - {fileID: 100002, guid: d8694ca58632a3c48b25c2ab980ad323, type: 2}
+  - {fileID: 100002, guid: 62e66cab5ce803240883449674e64356, type: 2}
   spawnRate: 1
   delay: 1
 --- !u!4 &402857731
@@ -463,12 +461,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2029639a90c164fb5c0728d3523f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 1
+  color: 2
   attackPower: 1
   life: 1
   value: 0
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
-  myMaterial: {fileID: 2100000, guid: 99a843cccc90fe542b2a229c13624427, type: 2}
+  explosionAudio: {fileID: 0}
+  materialPrefab: {fileID: 2100000, guid: 99a843cccc90fe542b2a229c13624427, type: 2}
 --- !u!58 &780615670
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -518,8 +517,8 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
-  fireAudio: {fileID: 8300000, guid: 85a71a2be2bf9f84dae23cd4f9aa9658, type: 3}
-  deathAudio: {fileID: 8300000, guid: b2dbcbf93eb1edc4aa9579833df4f484, type: 3}
+  fireAudio: {fileID: 8300000, guid: e16d4f5883547eb44980263451809336, type: 3}
+  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   spawnPoint: {fileID: 1737019508}
   lives: 3
   score: 0
@@ -548,7 +547,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: c92152990d0b04d44a124492832a4798, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e67c9c9fdd1541459b179163f6a3e68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &780615674
 Transform:
@@ -694,8 +693,8 @@ MonoBehaviour:
   shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 448758092}
   fireRate: 1
-  fireAudio: {fileID: 8300000, guid: 85a71a2be2bf9f84dae23cd4f9aa9658, type: 3}
-  deathAudio: {fileID: 8300000, guid: b2dbcbf93eb1edc4aa9579833df4f484, type: 3}
+  fireAudio: {fileID: 8300000, guid: e16d4f5883547eb44980263451809336, type: 3}
+  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   spawnPoint: {fileID: 1775730788}
   lives: 3
   score: 0
@@ -724,7 +723,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 81deb480a92087a4786fbe239227653c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d367fc106bd8b0742a49ecc17719bdb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1456380676
 Transform:
@@ -762,12 +761,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2029639a90c164fb5c0728d3523f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 0
+  color: 1
   attackPower: 1
   life: 1
   value: 0
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
-  myMaterial: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
+  explosionAudio: {fileID: 0}
+  materialPrefab: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
 --- !u!114 &1456380679
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyFaction : Faction {
-	public ParticleSystem explosion;
-	public AudioClip explosionAudio;
-	public Material myMaterial;
-
+public class EnemyFaction : UnitFaction {
 	public override void damage(GameObject orderer){
 		if(orderer.tag != "enemy"){
 			base.damage(orderer);
