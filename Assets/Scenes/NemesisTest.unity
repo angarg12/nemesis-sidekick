@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 100002, guid: 62e66cab5ce803240883449674e64356, type: 2}
-  spawnRate: 1
+  spawnRate: 1.39999998
   delay: 1
 --- !u!4 &402857731
 Transform:
