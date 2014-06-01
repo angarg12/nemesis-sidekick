@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour {
 	public Transform shotSpawn;
 	public float fireRate;
 	public AudioClip fireAudio;
-	public AudioClip deathAudio;
 
 	public Transform spawnPoint;
 	public int lives = 3;
@@ -49,9 +48,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public IEnumerator death(){
-		AudioSource audio = GameObject.FindWithTag("GameController").GetComponent<AudioSource>();
-		audio.PlayOneShot(deathAudio, 1F);
-
 		isDead = true;
 		lives--;
 		LevelController level = GameObject.FindWithTag("GameController").GetComponent<LevelController>();

@@ -117,7 +117,6 @@ MonoBehaviour:
   shotSpawn: {fileID: 400002}
   fireRate: 1
   fireAudio: {fileID: 8300000, guid: e16d4f5883547eb44980263451809336, type: 3}
-  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   spawnPoint: {fileID: 0}
   lives: 3
   score: 0
@@ -140,7 +139,7 @@ MonoBehaviour:
   life: 1
   value: 0
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
-  explosionAudio: {fileID: 0}
+  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   materialPrefab: {fileID: 2100000, guid: 99a843cccc90fe542b2a229c13624427, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:

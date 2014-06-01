@@ -20,6 +20,10 @@ public class PlayerFaction : UnitFaction {
 			transform.rotation);
 		explosionInstance.renderer.material = myMaterial;
 		explosionInstance.Play();
+		
+		AudioSource audio = GameObject.FindWithTag("GameController").GetComponent<AudioSource>();
+		audio.PlayOneShot(deathAudio, 1F);
+
 		PlayerController player = gameObject.GetComponent<PlayerController>();
 		player.StartCoroutine(player.death());
 	}

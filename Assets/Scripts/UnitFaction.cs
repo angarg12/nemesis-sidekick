@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UnitFaction : Faction {
 	public ParticleSystem explosion;
-	public AudioClip explosionAudio;
+	public AudioClip deathAudio;
 	public Material materialPrefab;
 	protected Material myMaterial;
 	

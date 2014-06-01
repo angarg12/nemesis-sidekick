@@ -21,11 +21,14 @@ public class EnemyFaction : UnitFaction {
 			explosion, 
 			transform.position, 
 			transform.rotation);
+
 		// Need to customize the explosion material for each faction
 		explosionInstance.renderer.material = myMaterial;
 		explosionInstance.Play();
+
 		AudioSource audio = GameObject.FindWithTag("GameController").GetComponent<AudioSource>();
-		audio.PlayOneShot(explosionAudio, 1F);
+		audio.PlayOneShot(deathAudio, 1F);
+
 		Destroy(gameObject);
 	}
 }

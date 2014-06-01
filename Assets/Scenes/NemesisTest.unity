@@ -466,7 +466,7 @@ MonoBehaviour:
   life: 1
   value: 0
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
-  explosionAudio: {fileID: 0}
+  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   materialPrefab: {fileID: 2100000, guid: 99a843cccc90fe542b2a229c13624427, type: 2}
 --- !u!58 &780615670
 CircleCollider2D:
@@ -518,7 +518,6 @@ MonoBehaviour:
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
   fireAudio: {fileID: 8300000, guid: e16d4f5883547eb44980263451809336, type: 3}
-  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   spawnPoint: {fileID: 1737019508}
   lives: 3
   score: 0
@@ -694,7 +693,6 @@ MonoBehaviour:
   shotSpawn: {fileID: 448758092}
   fireRate: 1
   fireAudio: {fileID: 8300000, guid: e16d4f5883547eb44980263451809336, type: 3}
-  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   spawnPoint: {fileID: 1775730788}
   lives: 3
   score: 0
@@ -766,7 +764,7 @@ MonoBehaviour:
   life: 1
   value: 0
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
-  explosionAudio: {fileID: 0}
+  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   materialPrefab: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
 --- !u!114 &1456380679
 MonoBehaviour:
