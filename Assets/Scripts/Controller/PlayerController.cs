@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 	public float speed;
@@ -21,8 +20,8 @@ public class PlayerController : MonoBehaviour {
 	public string VerticalAxis = "";
 
 	private bool isDead = false;
-	private Dictionary<IBuff, int> buffs = new Dictionary<IBuff, int>();
-		
+	private BuffTracker buffTracker = new BuffTracker();	
+
 	void FixedUpdate(){
 		if(isDead == false){
 			float moveHorizontal = Input.GetAxis (HorizontalAxis);
@@ -53,7 +52,7 @@ public class PlayerController : MonoBehaviour {
 		isDead = true;
 		lives--;
 		LevelController level = GameObject.FindWithTag("GameController").GetComponent<LevelController>();
-		level.playerKilled(gameObject);
+		level.playerKilled(this);
 
 		int respawnTime = 2;
 		int invincibilityTime = 1;
@@ -68,7 +67,7 @@ public class PlayerController : MonoBehaviour {
 			isDead = false;
 		}else{
 			Destroy(gameObject);
-			level.playerEliminated(gameObject);
+			level.playerEliminated(this);
 		}
 	}
 
@@ -98,17 +97,14 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void addBuff(IBuff buff){
-		if (buffs.ContainsKey (buff)) {
-			buffs [buff] += 1;		
-		} else {
-			buffs [buff] = 1;	
-		}
+		buffTracker.addBuff (buff);
 	}
 
 	public void removeBuff(IBuff buff){
-		if (buffs.ContainsKey (buff)) {
-			buffs [buff] -= 1;	
-		}
-		// FIXME: Should we log at least a warning if the key is not found?.
+		buffTracker.removeBuff (buff);
+	}
+
+	public string getBuffsString(){
+		return buffTracker.getStringValue ();
 	}
 }

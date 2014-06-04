@@ -17,11 +17,16 @@ public class LevelGUI : MonoBehaviour {
 		GUI.Label (new Rect (20,10,100,50), "Hero", style);
 		GUI.Label (new Rect (20,30,100,50), "Lives: "+hero.lives, style);
 		GUI.Label (new Rect (20,50,100,50), "Score: "+hero.score, style);
-
+		if (hero.getBuffsString() != null) {
+			GUI.Label (new Rect (20, 70, 100, 50), "Buffs: " + hero.getBuffsString(), style);
+		}
 		
 		GUI.Label (new Rect (Screen.width - 150,10,100,50), "Sidekick", style);
 		GUI.Label (new Rect (Screen.width - 150,30,100,50), "Lives: "+sidekick.lives, style);
 		GUI.Label (new Rect (Screen.width - 150,50,100,50), "Score: "+sidekick.score, style);
+		if (sidekick.getBuffsString() != null) {
+			GUI.Label (new Rect (Screen.width - 150,70,100,50), "Buffs: " + sidekick.getBuffsString(), style);
+		}
 
 		if(win){
 			GUIStyle winStyle = new GUIStyle(style);

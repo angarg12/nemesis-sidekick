@@ -39,17 +39,20 @@ public class SidekickLevelController : LevelController {
 	}
 
 	// Used to apply buff or anything in general.
-	public override void playerKilled(GameObject player){
-		if(hero != null && 
-		   player.tag == hero.tag){
-			DeathBuff.Instance.Apply(sidekick);
-		}else if(sidekick != null &&
-		         player.tag == sidekick.tag){
-			DeathBuff.Instance.Apply(hero);
+	public override void playerKilled(PlayerController player){
+		// Apply the death buff, only if it isn't game over!
+		if (player.lives > 0) {
+			if (hero != null && 
+				player.tag == hero.tag) {
+				DeathBuff.Instance.Apply (sidekick);
+			} else if (sidekick != null &&
+				player.tag == sidekick.tag) {
+				DeathBuff.Instance.Apply (hero);
+			}
 		}
 	}
 
-	public override void playerEliminated(GameObject player){
+	public override void playerEliminated(PlayerController player){
 		if(state == GameState.Started){
 			LevelGUI gui = GameObject.Find("GUI").GetComponent<LevelGUI>();
 			if(gui != null){

@@ -4,8 +4,8 @@ using System.Collections;
 public abstract class LevelController: MonoBehaviour {
 	public GameMode mode {get; protected set;}
 
-	public abstract void playerKilled(GameObject player);
-	public abstract void playerEliminated(GameObject player);
+	public abstract void playerKilled(PlayerController player);
+	public abstract void playerEliminated(PlayerController player);
 
 	public void pauseGame(){
 		Time.timeScale = 0;
