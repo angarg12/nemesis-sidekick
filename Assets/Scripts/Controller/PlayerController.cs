@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 	public float speed;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour {
 	public string VerticalAxis = "";
 
 	private bool isDead = false;
+	private Dictionary<IBuff, int> buffs = new Dictionary<IBuff, int>();
 		
 	void FixedUpdate(){
 		if(isDead == false){
@@ -93,5 +95,20 @@ public class PlayerController : MonoBehaviour {
 
 	public void addScore(int addScore){
 		score += addScore;
+	}
+
+	public void addBuff(IBuff buff){
+		if (buffs.ContainsKey (buff)) {
+			buffs [buff] += 1;		
+		} else {
+			buffs [buff] = 1;	
+		}
+	}
+
+	public void removeBuff(IBuff buff){
+		if (buffs.ContainsKey (buff)) {
+			buffs [buff] -= 1;	
+		}
+		// FIXME: Should we log at least a warning if the key is not found?.
 	}
 }

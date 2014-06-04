@@ -17,9 +17,15 @@ public class DeathBuff : IBuff {
 
 	public void Apply(PlayerController player){
 		player.fireRate -= 0.2f;
+		player.addBuff (this);
 	}
 
 	public void Unapply(PlayerController player){
 		player.fireRate += 0.2f;
+		player.removeBuff (this);
+	}
+
+	public override string ToString(){
+		return "Death Buff";
 	}
 }
