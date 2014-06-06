@@ -1,0 +1,3 @@
+[submodule "lib/Json.NET"]
+	path = lib/Json.NET
+	url = https://github.com/JamesNK/Newtonsoft.Json.git
