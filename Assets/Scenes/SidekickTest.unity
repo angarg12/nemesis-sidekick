@@ -405,6 +405,7 @@ MonoBehaviour:
   lose: 0
   paused: 0
   winMessageLabel: You win!!
+  loseMessageLabel: You lose
 --- !u!4 &754382609
 Transform:
   m_ObjectHideFlags: 0
@@ -412,10 +413,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 754382607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.98479342, y: 4.06589842, z: -1.79467773}
+  m_LocalPosition: {x: .0152065754, y: .0658984184, z: -1.79467773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 780615674}
+  m_Father: {fileID: 0}
 --- !u!1 &780615667
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +467,7 @@ MonoBehaviour:
   life: 1
   value: 0
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
-  explosionAudio: {fileID: 0}
+  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   materialPrefab: {fileID: 2100000, guid: 99a843cccc90fe542b2a229c13624427, type: 2}
 --- !u!58 &780615670
 CircleCollider2D:
@@ -518,7 +519,6 @@ MonoBehaviour:
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
   fireAudio: {fileID: 8300000, guid: e16d4f5883547eb44980263451809336, type: 3}
-  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   spawnPoint: {fileID: 1737019508}
   lives: 3
   score: 0
@@ -560,7 +560,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1083919727}
-  - {fileID: 754382609}
   m_Father: {fileID: 0}
 --- !u!1 &1083919726
 GameObject:
@@ -695,7 +694,6 @@ MonoBehaviour:
   shotSpawn: {fileID: 448758092}
   fireRate: 1
   fireAudio: {fileID: 8300000, guid: e16d4f5883547eb44980263451809336, type: 3}
-  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   spawnPoint: {fileID: 1775730788}
   lives: 3
   score: 0
@@ -767,7 +765,7 @@ MonoBehaviour:
   life: 1
   value: 0
   explosion: {fileID: 19800000, guid: 931f656e2ae42904fbc2be4db523aea4, type: 2}
-  explosionAudio: {fileID: 0}
+  deathAudio: {fileID: 8300000, guid: 50683e748f4a2f4489999660b88ef599, type: 3}
   materialPrefab: {fileID: 2100000, guid: a9c1ecc7450eaaf4f8ab5ff72d7b3350, type: 2}
 --- !u!114 &1456380679
 MonoBehaviour:
