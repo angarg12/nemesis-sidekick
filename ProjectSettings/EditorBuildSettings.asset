@@ -8,6 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
   - enabled: 1
-    path: Assets/Scenes/NemesisTest.unity
+    path: Assets/Scenes/NemesisLevels/NemesisTest.unity
   - enabled: 1
-    path: Assets/Scenes/SidekickTest.unity
+    path: Assets/Scenes/SidekickLevels/SidekickTest.unity
