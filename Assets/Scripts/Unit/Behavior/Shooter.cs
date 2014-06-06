@@ -10,6 +10,9 @@ public class Shooter : MonoBehaviour {
 
 	// FIXME: Is there a better method to prevent the audio from playing multiple times than
 	// using an static variable?
+	// suggestion: A less-hacky version might be a tiny serialized class for each sound: audioClip, 
+	// noPlaySecs and lastPlayedTime. Then a play member function to check lastPlayedTime ... . 
+	// But would have to pass in your audioSource or init a static. -  Owen Reynolds 
 	float audioPlayDelay = 0.2f;
 	static float LastTimeFired = 0f;
 
