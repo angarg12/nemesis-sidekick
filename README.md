@@ -30,6 +30,9 @@ This project is open to collaborations, so feel free to fork, change or use the 
 * Implement new features (usually registered in the issue tracker or the game roadmap).
 * Fix code. This includes code marked as needed fixing or code that you consider could be improved. If you have a chance to make the code better, just jump at it!.
 * Fix bugs (usually registered in the issue tracker).
+* Implement missing unit tests.
+* Implement missing security checks.
+* Implement missing logging.
 
 ###As a game designer
 * Design and suggest new features.
