@@ -4,14 +4,14 @@ using System.IO;
 using Newtonsoft.Json;
 
 public class LevelMenuGUI : MonoBehaviour {
-	Level level;
+	Level[] levels;
 
 	void Start(){
 		DebugUtils.Assert(SceneVariables.hasVariable(SceneVariables.Variable.LevelPath), 
 		                  "Variable "+SceneVariables.Variable.LevelPath+" not set correctly.");
 		string levelsPath = SceneVariables.getAndDeleteVariable (SceneVariables.Variable.LevelPath);
 		
-		level = JsonConvert.DeserializeObject<Level>(File.ReadAllText(levelsPath));
+		levels = JsonConvert.DeserializeObject<Level[]>(File.ReadAllText(levelsPath));
 	}
 
 	void OnGUI () {
@@ -24,19 +24,20 @@ public class LevelMenuGUI : MonoBehaviour {
 				600));
 		GUILayout.BeginHorizontal ();
 
-		if(GUILayout.Button(level.DisplayName, GUILayout.Height(40), GUILayout.Width(40))){
-			Application.LoadLevel(level.Name);
+		foreach(Level level in levels){
+			if(GUILayout.Button(level.DisplayName, GUILayout.Height(40), GUILayout.Width(40))){
+				Application.LoadLevel(level.Name);
+			}
+			// What a convoluted way to implement the onHover function. Keep an eye for if they ever simplify this.
+			if(Event.current.type == EventType.Repaint &&
+			   GUILayoutUtility.GetLastRect().Contains(Event.current.mousePosition )){
+				levelDescription = level.Description;
+			}
 		}
-		// What a convoluted way to implement the onHover function. Keep an eye for if they ever simplify this.
-		if(Event.current.type == EventType.Repaint &&
-		   GUILayoutUtility.GetLastRect().Contains(Event.current.mousePosition )){
-			levelDescription = level.Description;
-		}
-
 		GUILayout.EndHorizontal ();
 		GUILayout.EndArea ();
+
 		// This box contains the description of the level. It changes as you hover over level buttons.
-		
 		GUI.skin.box.wordWrap = true;
 		GUI.Box(
 			new Rect(
