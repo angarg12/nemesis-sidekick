@@ -1,7 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
+using Newtonsoft.Json;
 
 public class LevelMenuGUI : MonoBehaviour {
+	Level level;
+
+	void Start(){
+		DebugUtils.Assert(SceneVariables.hasVariable(SceneVariables.Variable.LevelPath), 
+		                  "Variable "+SceneVariables.Variable.LevelPath+" not set correctly.");
+		string levelsPath = SceneVariables.getAndDeleteVariable (SceneVariables.Variable.LevelPath);
+		
+		level = JsonConvert.DeserializeObject<Level>(File.ReadAllText(levelsPath));
+	}
+
 	void OnGUI () {
 		string levelDescription = "";
 		GUILayout.BeginArea (
@@ -11,13 +23,14 @@ public class LevelMenuGUI : MonoBehaviour {
 				600,
 				600));
 		GUILayout.BeginHorizontal ();
-		if(GUILayout.Button("1", GUILayout.Height(40), GUILayout.Width(40))){
-			Application.LoadLevel("NemesisTest");
+
+		if(GUILayout.Button(level.DisplayName, GUILayout.Height(40), GUILayout.Width(40))){
+			Application.LoadLevel(level.Name);
 		}
 		// What a convoluted way to implement the onHover function. Keep an eye for if they ever simplify this.
 		if(Event.current.type == EventType.Repaint &&
 		   GUILayoutUtility.GetLastRect().Contains(Event.current.mousePosition )){
-			levelDescription = "Score 2000 points to win.";
+			levelDescription = level.Description;
 		}
 
 		GUILayout.EndHorizontal ();

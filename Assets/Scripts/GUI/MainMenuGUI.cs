@@ -11,9 +11,9 @@ public class MainMenuGUI : MonoBehaviour {
 				200,
 				400), 
 			"Nemesis mode\n " +
-			"Competitive game\n " +
-			"Score 2000 total points and be the last player alive to win.")){
-			Application.LoadLevel("NemesisTest");
+			"Competitive game.")){
+			SceneVariables.putVariable(SceneVariables.Variable.LevelPath,"./Assets/Scenes/NemesisLevels/Levels.json");
+			Application.LoadLevel("LevelMenu");
 		}
 		if(GUI.Button(
 			new Rect(
@@ -23,9 +23,9 @@ public class MainMenuGUI : MonoBehaviour {
 				400), 
 			"Sidekick mode\n " +
 			"Cooperative game\n " +
-			"Friendly fire is enabled\n " +
-			"Score 5000 total combined points and survive both players to win.")){
-			Application.LoadLevel("SidekickTest");
+			"Friendly fire is enabled.")){
+			SceneVariables.putVariable(SceneVariables.Variable.LevelPath,"./Assets/Scenes/SidekickLevels/Levels.json");
+			Application.LoadLevel("LevelMenu");
 		}
 		if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+200)/2,100,50), "Quit")){
 			Application.Quit();
