@@ -7,11 +7,14 @@ public class LevelMenuGUI : MonoBehaviour {
 	Level[] levels;
 
 	void Start(){
+		// How we could enable loading plugin levels: add a path were level json are dropped,
+		// and then scan that folder and load whatever level files are present.
 		DebugUtils.Assert(SceneVariables.hasVariable(SceneVariables.Variable.LevelPath), 
 		                  "Variable "+SceneVariables.Variable.LevelPath+" not set correctly.");
-		string levelsPath = SceneVariables.getAndDeleteVariable (SceneVariables.Variable.LevelPath);
-		
-		levels = JsonConvert.DeserializeObject<Level[]>(File.ReadAllText(levelsPath));
+		string levelsFile = SceneVariables.getAndDeleteVariable (SceneVariables.Variable.LevelPath);
+
+		TextAsset fileContent = Resources.Load<TextAsset>(levelsFile);
+		levels = JsonConvert.DeserializeObject<Level[]>(fileContent.text);
 	}
 
 	void OnGUI () {
