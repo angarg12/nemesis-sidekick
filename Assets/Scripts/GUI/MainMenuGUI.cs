@@ -12,7 +12,7 @@ public class MainMenuGUI : MonoBehaviour {
 				400), 
 			"Nemesis mode\n " +
 			"Competitive game.")){
-			SceneVariables.putVariable(SceneVariables.Variable.LevelPath,"./Assets/Scenes/NemesisLevels/Levels.json");
+			SceneVariables.putVariable(SceneVariables.Variable.LevelPath,"NemesisLevels");
 			Application.LoadLevel("LevelMenu");
 		}
 		if(GUI.Button(
@@ -24,7 +24,7 @@ public class MainMenuGUI : MonoBehaviour {
 			"Sidekick mode\n " +
 			"Cooperative game\n " +
 			"Friendly fire is enabled.")){
-			SceneVariables.putVariable(SceneVariables.Variable.LevelPath,"./Assets/Scenes/SidekickLevels/Levels.json");
+			SceneVariables.putVariable(SceneVariables.Variable.LevelPath,"SidekickLevels");
 			Application.LoadLevel("LevelMenu");
 		}
 		if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+200)/2,100,50), "Quit")){
