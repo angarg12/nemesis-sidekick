@@ -6,7 +6,7 @@ public class MainMenuGUI : MonoBehaviour {
 		GUI.skin.button.wordWrap = true;
 		if(GUI.Button(
 			new Rect(
-				(Screen.width-200)/2-200,
+				(Screen.width-200)/2-110,
 				(Screen.height-500)/2,
 				200,
 				400), 
@@ -17,7 +17,7 @@ public class MainMenuGUI : MonoBehaviour {
 		}
 		if(GUI.Button(
 			new Rect(
-				(Screen.width-200)/2+200,
+				(Screen.width-200)/2+110,
 				(Screen.height-500)/2,
 				200,
 				400), 
@@ -27,7 +27,7 @@ public class MainMenuGUI : MonoBehaviour {
 			SceneVariables.putVariable(SceneVariables.Variable.LevelPath,"SidekickLevels");
 			Application.LoadLevel("LevelMenu");
 		}
-		if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+200)/2,100,50), "Quit")){
+		if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+350)/2,100,50), "Quit")){
 			Application.Quit();
 		}
 	}
