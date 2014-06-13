@@ -37,10 +37,11 @@ public class LevelGUI : MonoBehaviour {
 			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+70)/2,100,50), "Repeat")){
 				Application.LoadLevel(Application.loadedLevel);
 			}
-			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+190)/2,100,50), "Quit")){
-				Application.Quit();
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+190)/2,100,50), "Main menu")){
+				Application.LoadLevel("MainMenu");
 			}
 		}
+
 		if(lose){
 			GUIStyle loseStyle = new GUIStyle(style);
 			loseStyle.fontSize = 32;
@@ -50,10 +51,11 @@ public class LevelGUI : MonoBehaviour {
 			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+70)/2,100,50), "Retry")){
 				Application.LoadLevel(Application.loadedLevel);
 			}
-			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+190)/2,100,50), "Quit")){
-				Application.Quit();
+			if(GUI.Button(new Rect((Screen.width-100)/2,(Screen.height+190)/2,100,50), "Main menu")){
+				Application.LoadLevel("MainMenu");
 			}
 		}
+
 		if(paused){		
 			LevelController level = GameObject.FindWithTag("GameController").GetComponent<LevelController>();
 			level.pauseGame();
