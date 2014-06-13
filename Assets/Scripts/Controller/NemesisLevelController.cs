@@ -9,8 +9,13 @@ public class NemesisLevelController : LevelController {
 
 	private GameState state;
 	private int playersRemaining = 2;
-	
+
+	protected new void setup(){
+		base.setup ();
+	}
+
 	void Start(){
+		setup ();
 		mode = GameMode.Nemesis;
 		state = GameState.Started;
 		Time.timeScale = 1;

@@ -6,6 +6,11 @@ public abstract class LevelController: MonoBehaviour {
 
 	public abstract void playerKilled(PlayerController player);
 	public abstract void playerEliminated(PlayerController player);
+	
+	protected void setup(){
+		Camera camera = GameObject.Find ("Main Camera").camera;
+		camera.orthographicSize = (Screen.height / 2.0f) / (float)Constants.PIXELS_PER_UNIT;
+	}
 
 	public void pauseGame(){
 		Time.timeScale = 0;
