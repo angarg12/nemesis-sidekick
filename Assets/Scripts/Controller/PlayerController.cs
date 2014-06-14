@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 	public float speed;
-	public Boundary boundary;
 	
 	public BulletFaction shotPrefab;
 	public Transform shotSpawn;
@@ -29,12 +28,9 @@ public class PlayerController : MonoBehaviour {
 			
 			Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 			rigidbody2D.velocity = movement * speed;
-			
-			transform.position = new Vector3(
-				Mathf.Clamp (transform.position.x, boundary.xMin, boundary.xMax), 
-				Mathf.Clamp (transform.position.y, boundary.yMin, boundary.yMax),
-				0.0f
-				);
+
+			LevelController levelController = (LevelController)Object.FindObjectOfType(typeof(LevelController));
+			transform.position = levelController.playersBoundary.trimToBoundary(transform.position.x,transform.position.y);
 		}
 		
 		if(isDead == false &&
