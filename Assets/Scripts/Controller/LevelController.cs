@@ -9,6 +9,9 @@ public abstract class LevelController: MonoBehaviour {
 	public abstract void playerKilled(PlayerController player);
 	public abstract void playerEliminated(PlayerController player);
 	
+	public Collider2D levelArea;
+	public Collider2D externalLevelArea;
+	
 	protected void setup(){
 		adjustToResolution ();
 	}
@@ -31,14 +34,12 @@ public abstract class LevelController: MonoBehaviour {
 		playersBoundary.yMax = screen.yMax-1f;
 		playersBoundary.yMin = screen.yMin+0.5f;
 
-		GameObject boundaryObject = GameObject.Find ("Boundary");
-		boundaryObject.transform.localScale = new Vector3 (
+		levelArea.transform.localScale = new Vector3 (
 			screen.xMax * 2f + 2f,
 			screen.yMax * 2f + 2f,
 			0f);
 
-		GameObject externalBoundaryObject = GameObject.Find ("ExternalBoundary");
-		externalBoundaryObject.transform.localScale = new Vector3 (
+		externalLevelArea.transform.localScale = new Vector3 (
 			screen.xMax * 2f + 4f,
 			screen.yMax * 2f + 4f,
 			0f);

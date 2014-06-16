@@ -274,7 +274,7 @@ GameObject:
   - 114: {fileID: 577943106}
   - 61: {fileID: 577943107}
   m_Layer: 0
-  m_Name: Boundary
+  m_Name: LevelArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -479,7 +479,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: .430000007
+  m_Radius: .280000001
   m_Center: {x: 0, y: 0}
 --- !u!50 &780615671
 Rigidbody2D:
@@ -510,11 +510,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  boundary:
-    xMin: -7.5
-    xMax: 7.5
-    yMin: -4
-    yMax: 3
   shotPrefab: {fileID: 11400002, guid: faf0fc871ec458942a474e19ade4faa2, type: 2}
   shotSpawn: {fileID: 1083919727}
   fireRate: 1
@@ -685,11 +680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  boundary:
-    xMin: -7.5
-    xMax: 7.5
-    yMin: -4
-    yMax: 3
   shotPrefab: {fileID: 11400004, guid: e9ac8e2fe87cdda47965d2f8030ac22e, type: 2}
   shotSpawn: {fileID: 448758092}
   fireRate: 1
@@ -722,7 +712,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: d367fc106bd8b0742a49ecc17719bdb3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a6dd3d401c4d3e40977d701bc7b30b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1456380676
 Transform:
@@ -746,7 +736,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: .430000007
+  m_Radius: .280000001
   m_Center: {x: 0, y: 0}
 --- !u!114 &1456380678
 MonoBehaviour:
@@ -807,6 +797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d9ac82c07c42f499f08791fccfa7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelArea: {fileID: 577943107}
+  externalLevelArea: {fileID: 1618492785}
   targetCombinedScore: 5000
   hero: {fileID: 1456380674}
   sidekick: {fileID: 780615672}
@@ -890,7 +882,7 @@ GameObject:
   - 114: {fileID: 1618492786}
   - 61: {fileID: 1618492785}
   m_Layer: 0
-  m_Name: ExternalBoundary
+  m_Name: ExternalLevelArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -274,7 +274,7 @@ GameObject:
   - 114: {fileID: 577943106}
   - 61: {fileID: 577943107}
   m_Layer: 0
-  m_Name: Boundary
+  m_Name: LevelArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,6 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2611c638241ae4d99e639158503269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelArea: {fileID: 577943107}
+  externalLevelArea: {fileID: 1618492785}
   targetIndividualScore: 2000
   hero: {fileID: 1456380674}
   sidekick: {fileID: 780615672}
@@ -832,7 +834,7 @@ GameObject:
   - 114: {fileID: 1618492786}
   - 61: {fileID: 1618492785}
   m_Layer: 0
-  m_Name: ExternalBoundary
+  m_Name: ExternalLevelArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
