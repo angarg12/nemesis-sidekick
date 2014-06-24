@@ -2,12 +2,14 @@
 using System.Collections;
 using Newtonsoft.Json;
 
+using System; using System.Reflection;
+
 public class MovementProcessor : MonoBehaviour {
 	Movement[] movements;
 
 	void Start () {
 		TextAsset fileContent = Resources.Load<TextAsset>("EnemyMovement");
-		movements = JsonConvert.DeserializeObject<MovementLine[]>(fileContent.text);
+		movements = JsonConvert.DeserializeObject<Movement[]>(fileContent.text, new MovementItemConverter());
 		StartCoroutine(process());
 	}
 
