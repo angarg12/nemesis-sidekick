@@ -5,14 +5,10 @@ using Newtonsoft.Json.Linq;
 class MovementItemConverter : JsonConverter {
 	public Movement Create(Type objectType, JObject jObject) {
 		String type = (String)jObject.Property("type");
-		
-		switch (type){
-		case "line":
-			return new MovementLine();
-		case "circle":
-			return new MovementCircle();
-		}
-		
+
+		string class_ = GlobalRegistry.get ("movement", type);
+		return (Movement)Activator.CreateInstance(null, class_).Unwrap();
+
 		throw new ApplicationException(String.Format("The movement type {0} is not supported!", type));
 	}
 	
